@@ -1,29 +1,38 @@
-import Vue from 'vue'
-// BootstrapVue
-import './plugins/bootstrapVue'
+// Paquetes de npm
+import Vue from "vue";
 
-// Vue Font-Awesome
-import './plugins/fontAwesome'
+// Bootstrap Vue
+import "./plugins/BootstrapVue";
 
-import App from './App.vue'
-import router from './router'
-import store from './store'
+// FontAwesome
+import "./plugins/fontAwesome";
+
+// Archivos locales de nuestra App
+import App from "@/App.vue";
+import router from "@/router";
+import store from "@/store";
 
 // CSS global
-import './assets/css/main.styl'
+import "@/assets/css/main.styl";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-vue/dist/bootstrap-vue.css";
 
-Vue.config.productionTip = false
+// Configuración extra
+Vue.config.productionTip = false;
 
+// Instancia principal de Vue
 new Vue({
   router,
   store,
   methods: {
-    init () {
-      store.dispatch('oauth/getToken')
+    // Nuestra función
+    init() {
+      store.dispatch("oauth/getToken", null, { root: true });
     }
   },
-  created () {
-    this.init()
+  // Hook created
+  created() {
+    this.init();
   },
   render: h => h(App)
-}).$mount('#app')
+}).$mount("#app");
