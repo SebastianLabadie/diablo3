@@ -1,5 +1,8 @@
 <template>
-  <div class="hero-portrait-wrapper mb-5 mb-sm-0">
+  <div
+    class="hero-portrait-wrapper mb-5 mb-sm-0 hover-cursor-pointer"
+    @click="goToHero(hero.id)"
+  >
     <!-- Avatar -->
     <div class="bg-secondary d-flex justify-content-center p-3 p-sm-0">
       <!-- Imagen de fondo, según la clase y el género -->
@@ -39,6 +42,7 @@
 
 <script>
 import { formatNumber } from "@/filters/numeral";
+import goToHero from "@/mixins/goToHero";
 
 export default {
   name: "TopHero",
@@ -46,6 +50,7 @@ export default {
   filters: {
     formatNumber
   },
+  mixins: [goToHero],
 
   props: {
     hero: {

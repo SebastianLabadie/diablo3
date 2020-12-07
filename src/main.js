@@ -25,12 +25,10 @@ new Vue({
   router,
   store,
   methods: {
-    // Nuestra función
     init() {
       store.dispatch("oauth/getToken", null, { root: true });
     }
   },
-  // Hook created
   created() {
     this.init();
   },
