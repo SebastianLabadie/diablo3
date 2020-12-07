@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'HeroView'
-}
+  name: "HeroView"
+};
 </script>

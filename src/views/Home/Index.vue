@@ -1,16 +1,16 @@
 <template>
   <div class="home">
     <HomeTitle />
-    <HomeForm/>
+    <HomeForm />
   </div>
 </template>
 
 <script>
-import HomeTitle from './HomeTitle'
-import HomeForm from './HomeForm'
+import HomeTitle from "./HomeTitle";
+import HomeForm from "./HomeForm";
 
 export default {
   name: "Home",
-  components:{HomeTitle,HomeForm}
+  components: { HomeTitle, HomeForm }
 };
 </script>
